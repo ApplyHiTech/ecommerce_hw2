@@ -27,8 +27,6 @@ def main():
 	print ('pay-your-bid revenue: ', evaluate_block(tx_to_insert_list, mempool_data))
 
 	
-	# note to self: when checking insert this line:
-	# tx_to_insert_tuple=TA_greedy_knapsack(block_size, tx_to_insert_list, mempool_data)
 	vcg=VCG(block_size, tx_to_insert_list, mempool_data)
 	print ('vcg revenue: ',sum(vcg.values()))
 	
@@ -38,10 +36,9 @@ def main():
 	############################
 
 	bid_true=truthful_bidding_agent(225, 4000, 0.4, mempool_data, block_size)
-	bid_students=forward_bidding_agent(225, 4000, 0.4, mempool_data, block_size,time_added=1)
+	bid_students=forward_bidding_agent(225, 4000, 0.4, mempool_data, block_size)
 	print ('bid of truthful agent: %s, bid of student agent: %s' %(bid_true, bid_students))
 	
-
 
 	
 if __name__ == "__main__":
